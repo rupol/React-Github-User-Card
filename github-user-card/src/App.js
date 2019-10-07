@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import "./App.css";
 
-import GitCard from "./components/GitCard";
+import Header from "./components/Header";
+import GitCards from "./components/GitCards";
 
 class App extends React.Component {
   constructor() {
@@ -64,18 +65,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="header">
-          <img src="./assets/lambdalogo.png" alt="Lambda Logo" />
-          <span className="heart" role="img" aria-label="heart">
-            ❤️'s
-          </span>
-          <img src="./assets/githublogo.png" alt="GitHub Logo" />
-        </div>
-        <div className="cards">
-          {this.state.users.map(user => (
-            <GitCard key={user.id} user={user} />
-          ))}
-        </div>
+        <Header />
+        <GitCards users={this.state.users} />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import GitHubCalendar from "react-github-calendar";
 
-const GitCard = props => {
+const Card = props => {
   return (
     <div className="card">
       <img src={props.user.imageUrl} alt={props.user.name} />
@@ -22,4 +22,4 @@ const GitCard = props => {
   );
 };
 
-export default GitCard;
+export default Card;
