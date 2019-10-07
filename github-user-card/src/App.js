@@ -16,24 +16,6 @@ class App extends React.Component {
     this.fetchGithubData();
   }
 
-  // fetchGithubData = () => {
-  //   axios
-  //     .get("https://api.github.com/users/rupol/following")
-  //     .then(response => {
-  //       // network request resolved
-  //       // create following array from response data
-  //       this.setState({
-  //         users: response.data
-  //       });
-  //       console.log(this.state.users);
-  //     })
-  //     .catch(error => {
-  //       // network request rejected
-  //       console.log("Network request was unsuccessful");
-  //       console.log(error);
-  //     });
-  // };
-
   fetchGithubData = () => {
     axios
       .get("https://api.github.com/users/rupol/following")
@@ -81,14 +63,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div class="container">
-        <div class="header">
+      <div className="container">
+        <div className="header">
           <img src="./assets/lambdalogo.png" alt="Lambda Logo" />
-          <p>❤️'s</p>
+          <span className="heart" role="img" aria-label="heart">
+            ❤️'s
+          </span>
           <img src="./assets/githublogo.png" alt="GitHub Logo" />
         </div>
-        <div class="cards">
-          {console.log(this.state.users)}
+        <div className="cards">
           {this.state.users.map(user => (
             <GitCard key={user.id} user={user} />
           ))}
